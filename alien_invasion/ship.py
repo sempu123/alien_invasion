@@ -16,7 +16,7 @@ class Ship:
         self.rect = self.image.get_rect()
 
         # Każdy nowy statek pojawia sie na dole ekranu
-        self.rect.center = self.screen_rect.center
+        self.rect.midbottom = self.screen_rect.midbottom
 
         # Położenie statku jest przechowywane w postaci liczby zmiennoprzecinkowej
         self.x = float(self.rect.x)
@@ -45,3 +45,9 @@ class Ship:
     def blitme(self):
         """Wyświetla statek kosmiczny w jego aktualnym położeniu"""
         self.screen.blit(self.image, self.rect)
+
+    def center_ship(self):
+        """umieszczenie statku na dole ekranu"""
+        self.rect.midbottom = self.screen_rect.midbottom
+        self.x = float(self.rect.x)
+        self.y = float(self.rect.y)
